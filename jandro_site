@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jandro LLC — SaaS that solves real problems</title>
+  <meta name="description" content="Jandro LLC builds pragmatic SaaS products that help teams move faster, reduce busywork, and solve real-world problems." />
+  <meta property="og:title" content="Jandro LLC — SaaS that solves real problems" />
+  <meta property="og:description" content="Pragmatic software, delivered as a service. Launch quickly, scale safely, and focus on impact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Jandro+LLC" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232563eb'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='56' font-family='Arial' fill='white'%3EJ%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f172a;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --brand:#2563eb;
+      --brand-2:#06b6d4;
+      --ok:#10b981;
+      --bad:#ef4444;
+      --ring: 0 0 0 6px color-mix(in oklab, var(--brand) 15%, transparent);
+      --radius:16px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:linear-gradient(180deg,#0b1220 0%,#0b1220 35%,#0d1425 100%);color:var(--text);font:16px/1.6 system-ui,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:10px 0;position:sticky;top:0;background:rgba(11,18,32,.75);backdrop-filter:blur(12px);z-index:20}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand-2));display:grid;place-items:center;box-shadow:var(--shadow)}
+    .logo span{font-weight:900;color:white}
+    .nav a.link{color:var(--text);opacity:.85}
+    .nav a.link:hover{opacity:1}
+    .cta{display:inline-block;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white;padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
+    .cta:hover{text-decoration:none;transform:translateY(-1px)}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:42px 0}
+    .h1{font-size:clamp(28px,4.5vw,48px);line-height:1.1;margin:0 0 14px}
+    .lead{color:var(--muted);font-size:18px}
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(148,163,184,.18);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .hero-card{padding:18px}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .card{padding:18px;border-radius:12px;background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.12)}
+    .chip{display:inline-flex;gap:8px;align-items:center;padding:6px 10px;border-radius:99px;background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.25);color:#cfe1ff;font-weight:600}
+    .section{padding:56px 0}
+    .section h2{font-size:28px;margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .list{display:grid;gap:8px;margin:10px 0 0;padding:0}
+    .list li{list-style:none;display:flex;gap:10px;align-items:flex-start}
+    .tick{color:var(--ok)}
+    .x{color:var(--bad)}
+    .pricing{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .price .tag{font-weight:800;font-size:28px}
+    .badge{display:inline-block;background:rgba(16,185,129,.15);color:#86efac;border:1px solid rgba(16,185,129,.35);padding:4px 8px;border-radius:10px;font-weight:700;font-size:12px}
+    .footer{padding:30px 0;color:var(--muted);border-top:1px solid rgba(148,163,184,.18);margin-top:40px}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .kpi{padding:16px;background:rgba(255,255,255,.03);border:1px solid rgba(148,163,184,.14);border-radius:12px;text-align:center}
+    .kpi b{font-size:22px}
+    .subtle{opacity:.8}
+    .inline{display:inline-flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .cols{display:grid;grid-template-columns:1fr .8fr;gap:18px}
+    .input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(148,163,184,.25);background:#0b1220;color:var(--text)}
+    .input:focus, textarea:focus{outline:none;box-shadow:var(--ring);border-color:color-mix(in oklab,var(--brand) 55%, #94a3b8)}
+    textarea{min-height:120px;resize:vertical}
+    .mini{font-size:12px}
+    .note{font-size:13px;color:var(--muted)}
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .grid-2,.pricing,.cols{grid-template-columns:1fr}
+      .kpis{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <div class="wrap nav" role="navigation" aria-label="Primary">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><span>J</span></div>
+      <span>Jandro LLC</span>
+    </div>
+    <div class="inline">
+      <a class="link" href="#solutions">Solutions</a>
+      <a class="link" href="#features">Features</a>
+      <a class="link" href="#pricing">Pricing</a>
+      <a class="link" href="#about">About</a>
+      <a class="cta" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="wrap hero">
+    <div>
+      <span class="chip">SaaS that solves real problems</span>
+      <h1 class="h1">Ship faster. Automate the boring. <br/>Scale without the stress.</h1>
+      <p class="lead">Jandro LLC builds pragmatic Software-as-a-Service products that remove friction from everyday workflows—so teams can focus on outcomes, not overhead.</p>
+      <div class="inline" style="margin-top:16px">
+        <a class="cta" href="#contact">Start a conversation</a>
+        <a class="link" href="#solutions" aria-label="Jump to solutions">See what we build →</a>
+      </div>
+      <div class="kpis" style="margin-top:24px">
+        <div class="kpi"><b>99.9%</b><div class="subtle">Uptime target</div></div>
+        <div class="kpi"><b>5x</b><div class="subtle">Avg. process speedup</div></div>
+        <div class="kpi"><b>60d</b><div class="subtle">From idea to launch</div></div>
+        <div class="kpi"><b>24/5</b><div class="subtle">Human support</div></div>
+      </div>
+    </div>
+
+    <div class="panel hero-card" aria-label="Product preview">
+      <div class="hero-grid">
+        <div class="card">
+          <b>Automation Pipelines</b>
+          <p class="muted">Connect data sources, trigger actions, and ship without writing glue code.</p>
+          <ul class="list">
+            <li><span class="tick">✔</span> No-code setup with optional SDK</li>
+            <li><span class="tick">✔</span> Versioned & auditable runs</li>
+            <li><span class="tick">✔</span> Webhooks & schedules</li>
+          </ul>
+        </div>
+        <div class="card">
+          <b>Dashboards & Insights</b>
+          <p class="muted">Answer “how are we doing?” at a glance with live metrics and alerts.</p>
+          <ul class="list">
+            <li><span class="tick">✔</span> Unified analytics layer</li>
+            <li><span class="tick">✔</span> Role-based sharing</li>
+            <li><span class="tick">✔</span> Email & Slack reports</li>
+          </ul>
+        </div>
+        <div class="card">
+          <b>Integrations</b>
+          <p class="muted">First-party connectors for your favorite tools; open API for the rest.</p>
+          <ul class="list">
+            <li><span class="tick">✔</span> REST & GraphQL APIs</li>
+            <li><span class="tick">✔</span> SSO & SCIM</li>
+            <li><span class="tick">✔</span> Webhooks outbound</li>
+          </ul>
+        </div>
+        <div class="card">
+          <b>Security & Compliance</b>
+          <p class="muted">Modern security from day one with sane defaults.</p>
+          <ul class="list">
+            <li><span class="tick">✔</span> Encryption in transit & at rest</li>
+            <li><span class="tick">✔</span> SSO, MFA, least-privilege</li>
+            <li><span class="tick">✔</span> Data residency options</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SOLUTIONS -->
+  <section id="solutions" class="wrap section">
+    <h2>Where Jandro helps today</h2>
+    <p class="muted">We build focused SaaS that plugs into your stack and removes bottlenecks.</p>
+    <div class="grid-3" style="margin-top:12px">
+      <div class="card">
+        <b>Ops & Back-Office</b>
+        <p class="muted">Automate repetitive tasks like approvals, intake, and document workflows.</p>
+      </div>
+      <div class="card">
+        <b>Revenue & GTM</b>
+        <p class="muted">Speed up quotes, proposals, and renewals with shareable flows & e-sign.</p>
+      </div>
+      <div class="card">
+        <b>Data & Insights</b>
+        <p class="muted">Make reports trustworthy with centralized models and governance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="wrap section">
+    <h2>Opinionated features that save time</h2>
+    <div class="grid-3">
+      <div class="card">
+        <b>Launch in weeks</b>
+        <p class="muted">Choose from proven templates. Customize what matters, skip what doesn’t.</p>
+      </div>
+      <div class="card">
+        <b>API-first</b>
+        <p class="muted">Everything you can click, you can script. SDKs available.</p>
+      </div>
+      <div class="card">
+        <b>Transparent pricing</b>
+        <p class="muted">Start free, scale predictably. No surprise overages.</p>
+      </div>
+      <div class="card">
+        <b>Human support</b>
+        <p class="muted">Real engineers on the line. We fix things fast.</p>
+      </div>
+      <div class="card">
+        <b>Privacy by design</b>
+        <p class="muted">Data minimization, audit trails, and customer-controlled retention.</p>
+      </div>
+      <div class="card">
+        <b>Enterprise ready</b>
+        <p class="muted">SSO, SAML, SCIM, custom roles, and dedicated environments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="wrap section">
+    <h2>Simple pricing</h2>
+    <p class="muted">Start free. Upgrade when you’re getting value.</p>
+    <div class="pricing" style="margin-top:12px">
+      <div class="card price">
+        <div class="tag">Starter</div>
+        <p class="muted">Launch your first workflow.</p>
+        <ul class="list">
+          <li><span class="tick">✔</span> 3 automations</li>
+          <li><span class="tick">✔</span> 5 team members</li>
+          <li><span class="tick">✔</span> Community support</li>
+        </ul>
+        <div style="margin-top:10px" class="inline">
+          <span class="badge">Free</span>
+          <a class="cta" href="#contact">Get started</a>
+        </div>
+      </div>
+      <div class="card price">
+        <div class="tag">Growth</div>
+        <p class="muted">Advanced features and higher limits.</p>
+        <ul class="list">
+          <li><span class="tick">✔</span> Unlimited automations</li>
+          <li><span class="tick">✔</span> SSO, Audit logs</li>
+          <li><span class="tick">✔</span> Priority support</li>
+        </ul>
+        <div style="margin-top:10px" class="inline">
+          <span class="badge">$ — custom</span>
+          <a class="cta" href="#contact">Talk to us</a>
+        </div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:8px">Need a private cloud or on-prem? We support dedicated environments.</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="wrap section cols">
+    <div>
+      <h2>About Jandro LLC</h2>
+      <p class="muted">We’re builders. Our philosophy is simple: solve the real problem, ship quickly, iterate with customers, and stand behind the work. We focus on practical outcomes over buzzwords.</p>
+      <ul class="list" style="margin-top:8px">
+        <li><span class="tick">✔</span> US-based, remote-friendly team</li>
+        <li><span class="tick">✔</span> Battle-tested stack and patterns</li>
+        <li><span class="tick">✔</span> Transparent communication</li>
+      </ul>
+    </div>
+    <div class="panel card">
+      <b>Principles we won’t compromise:</b>
+      <ul class="list" style="margin-top:8px">
+        <li><span class="tick">✔</span> Security first, not bolted on</li>
+        <li><span class="tick">✔</span> Measurable value within 30–60 days</li>
+        <li><span class="tick">✔</span> Minimal maintenance for customers</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="wrap section">
+    <h2>Let’s solve something together</h2>
+    <p class="muted">Tell us what you're trying to automate or improve. We’ll reply within one business day.</p>
+    <div class="grid-2" style="margin-top:12px">
+      <form class="card" onsubmit="event.preventDefault(); alert('Thanks! We will be in touch.');">
+        <div class="grid-2">
+          <input class="input" required placeholder="Your name" />
+          <input class="input" type="email" required placeholder="Email" />
+        </div>
+        <input class="input" placeholder="Company (optional)" style="margin-top:10px" />
+        <textarea class="input" placeholder="What problem are you solving?"></textarea>
+        <div class="inline" style="margin-top:10px">
+          <button class="cta" type="submit">Send message</button>
+          <span class="note">Or email us: <a href="mailto:hello@jandro.llc">hello@jandro.llc</a></span>
+        </div>
+      </form>
+      <div class="card">
+        <b>Prefer email?</b>
+        <p class="muted">Drop a note to <a href="mailto:hello@jandro.llc">hello@jandro.llc</a> and include any links or context. We’ll route it to the right engineer.</p>
+        <b style="display:block;margin-top:10px">Office</b>
+        <p class="muted">Jandro LLC<br/>Anywhere, USA</p>
+        <b style="display:block;margin-top:10px">Follow</b>
+        <p class="muted inline"><a href="#" onclick="return false;">LinkedIn</a> • <a href="#" onclick="return false;">GitHub</a> • <a href="#" onclick="return false;">X</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="wrap footer">
+    <div class="inline" style="justify-content:space-between; width:100%">
+      <div>© <span id="y"></span> Jandro LLC. All rights reserved.</div>
+      <div class="inline mini">
+        <a class="link" href="#" onclick="return false;">Privacy</a>
+        <span>•</span>
+        <a class="link" href="#" onclick="return false;">Security</a>
+        <span>•</span>
+        <a class="link" href="#" onclick="return false;">Status</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth-scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          history.replaceState(null,'', '#'+id);
+        }
+      });
+    });
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
